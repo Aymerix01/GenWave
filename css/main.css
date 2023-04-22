@@ -1,0 +1,341 @@
+@font-face {
+  font-family: "Alien Invader";
+  src: url("../assets/alien_invader/Alien_Invader.otf") format("opentype"), url("../assets/alien_invader/Alien_Invader.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 600vh;
+  width: 100%;
+  background-color: rgb(11, 26, 58);
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.wrapper .header {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+.wrapper .header .title {
+  color: white;
+  align-self: center;
+  margin-left: 15px;
+  font: 5em "Alien Invader", sans-serif;
+  z-index: 3;
+}
+.wrapper .header .contentTool {
+  position: relative;
+  width: 100%;
+}
+.wrapper .header .contentTool .BoutonH {
+  visibility: hidden;
+  position: absolute;
+  right: 2%;
+  top: 26px;
+  height: 65px;
+  width: 65px;
+  z-index: 3;
+}
+.wrapper .header .contentTool .BoutonH .BHamburger {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.wrapper .header .contentTool .toolbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+}
+.wrapper .header .contentTool .toolbar button {
+  margin-left: 8em;
+  width: 120px;
+  height: 50px;
+  background-color: rgb(11, 26, 58);
+  color: white;
+  border: 4px solid #cccccc;
+  border-radius: 30px;
+}
+.wrapper .header .contentTool .toolbar button:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 1530px) {
+  .wrapper .header .contentTool .title {
+    font-size: 3em;
+    margin-top: 21px;
+  }
+  .wrapper .header .contentTool .toolbar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 363px;
+    top: -15px;
+    right: 0;
+    z-index: 2;
+    background-color: rgb(11, 26, 58);
+    padding-left: 35%;
+    height: 100vh;
+    margin-right: -100%;
+    transition: all 0.5s ease;
+  }
+  .wrapper .header .contentTool .toolbar button {
+    margin-top: 75px;
+    margin-left: 5em;
+  }
+  .wrapper .header .contentTool .mobile-menu {
+    margin-right: 0;
+  }
+  .wrapper .header .contentTool .BoutonH {
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 970px) {
+  .wrapper .header .contentTool .toolbar {
+    display: none;
+    background-color: rgba(11, 26, 58, 0.384);
+    width: 100vw;
+    margin-right: 0;
+    backdrop-filter: blur(8px);
+  }
+  .wrapper .header .contentTool .toolbar button {
+    margin-left: 45%;
+  }
+  .wrapper .header .contentTool .mobile-menu {
+    display: flex;
+    height: 937px;
+  }
+}
+@media screen and (max-width: 716px) {
+  .wrapper .header .title {
+    font: 2em "Alien Invader", sans-serif;
+    margin-top: 43px;
+  }
+  .wrapper .header .contentTool .BoutonH {
+    height: 33px;
+    width: 33px;
+    margin-top: 20px;
+  }
+}
+.wrapper .content {
+  width: 100%;
+  margin-top: 50px;
+  height: 90vh;
+}
+.wrapper .content .first-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.wrapper .content .first-page .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.wrapper .content .first-page .left h1 {
+  font-size: 50px;
+  color: white;
+  justify-content: center;
+}
+.wrapper .content .first-page .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.wrapper .content .first-page .right .image {
+  width: 75%;
+  height: auto;
+  border-radius: 152px;
+}
+@media screen and (max-width: 1530px) {
+  .wrapper .content .first-page .right .image {
+    width: 80%;
+    height: auto;
+    border-radius: 100px;
+  }
+}
+@media screen and (max-width: 970px) {
+  .wrapper .content .first-page {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper .content .first-page .left {
+    width: 80%;
+  }
+  .wrapper .content .first-page .left h1 {
+    font-size: 30px;
+  }
+  .wrapper .content .first-page .right {
+    margin-top: 69px;
+    width: 80%;
+  }
+}
+.wrapper .content .imgTransi {
+  width: 100%;
+  height: auto;
+}
+.wrapper .content .second-page {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(233, 233, 233);
+  margin-top: -4px;
+}
+.wrapper .content .second-page .Aymeric {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  padding-top: 100px;
+}
+.wrapper .content .second-page .Aymeric .image {
+  width: 50%;
+}
+.wrapper .content .second-page .Aymeric .image .imageAymeric {
+  width: 35%;
+  border-radius: 50%;
+  margin-left: 39%;
+  height: auto;
+  margin-top: 5px;
+}
+.wrapper .content .second-page .Aymeric .image .imageAymeric:hover {
+  transform: scale(1.1);
+}
+.wrapper .content .second-page .Aymeric .texte {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  padding-right: 54px;
+  font-size: 0.75em;
+}
+.wrapper .content .second-page .Jeremy {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: fit-content;
+}
+.wrapper .content .second-page .Jeremy .image {
+  width: 50%;
+}
+.wrapper .content .second-page .Jeremy .image .imageJeremy {
+  width: 35%;
+  border-radius: 50%;
+  height: auto;
+  margin-left: 32%;
+}
+.wrapper .content .second-page .Jeremy .image .imageJeremy:hover {
+  transform: scale(1.1);
+}
+.wrapper .content .second-page .Jeremy .texte {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  padding-left: 54px;
+  font-size: 0.75em;
+}
+.wrapper .content .second-page .Sophie {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+}
+.wrapper .content .second-page .Sophie .image {
+  width: 50%;
+}
+.wrapper .content .second-page .Sophie .image .imageSophie {
+  width: 35%;
+  border-radius: 50%;
+  margin-left: 39%;
+  height: auto;
+  margin-top: 5px;
+}
+.wrapper .content .second-page .Sophie .image .imageSophie:hover {
+  transform: scale(1.1);
+}
+.wrapper .content .second-page .Sophie .texte {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  padding-right: 54px;
+  font-size: 0.75em;
+}
+.wrapper .content .second-page .Mael {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 10px;
+}
+.wrapper .content .second-page .Mael .image {
+  width: 50%;
+}
+.wrapper .content .second-page .Mael .image .imageMael {
+  width: 35%;
+  border-radius: 50%;
+  height: auto;
+  margin-left: 32%;
+}
+.wrapper .content .second-page .Mael .image .imageMael:hover {
+  transform: scale(1.1);
+}
+.wrapper .content .second-page .Mael .texte {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  padding-left: 54px;
+  font-size: 0.75em;
+}
+@media screen and (max-width: 970px) {
+  .wrapper .content .second-page .Aymeric, .wrapper .content .second-page .Jeremy, .wrapper .content .second-page .Sophie, .wrapper .content .second-page .Mael {
+    margin-bottom: 10px;
+  }
+  .wrapper .content .second-page .Aymeric .image, .wrapper .content .second-page .Jeremy .image, .wrapper .content .second-page .Sophie .image, .wrapper .content .second-page .Mael .image {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 200px;
+  }
+  .wrapper .content .second-page .Aymeric .image *[class^=image], .wrapper .content .second-page .Jeremy .image *[class^=image], .wrapper .content .second-page .Sophie .image *[class^=image], .wrapper .content .second-page .Mael .image *[class^=image] {
+    width: 200px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .wrapper .content .second-page .Aymeric .texte, .wrapper .content .second-page .Jeremy .texte, .wrapper .content .second-page .Sophie .texte, .wrapper .content .second-page .Mael .texte {
+    width: 70%;
+    font-size: 0.5em;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.wrapper .content .imgTransi2 {
+  width: 100%;
+  height: auto;
+  margin-top: -10px;
+}
+.wrapper .content .third-page {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(11, 26, 58);
+}
+
+/*# sourceMappingURL=main.css.map */

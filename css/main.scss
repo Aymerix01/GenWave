@@ -1,0 +1,383 @@
+
+@font-face {
+	font-family: 'Alien Invader';
+	src: url('../assets/alien_invader/Alien_Invader.otf') format('opentype'),
+        url('../assets/alien_invader/Alien_Invader.ttf') format('truetype')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 600vh;
+    width: 100%;
+    background-color: rgb(11, 26, 58);
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .header {
+        padding: 10px 10px 10px 10px;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+
+        .title{
+            color: white;
+            align-self: center;
+            margin-left:15px;
+            font: 5em "Alien Invader", sans-serif;
+            z-index: 3;
+        }
+
+        .contentTool{
+            position: relative;
+            width: 100%;
+
+            .BoutonH{
+                visibility: hidden;
+                position: absolute;
+                right: 2%;
+                top: 26px;
+                height: 65px;
+                width: 65px;
+                z-index: 3;
+
+                .BHamburger{
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 2;
+                }
+            }
+
+            .toolbar{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: 25px;
+
+                button{
+                    margin-left: 8em;
+                    width: 120px;
+                    height: 50px;
+                    background-color: rgb(11, 26, 58);
+                    color: white;
+                    border: 4px solid #cccccc;
+                    border-radius: 30px;
+                }
+                button:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            @media screen and (max-width: 1530px) {
+                .title{
+                    font-size: 3em;
+                    margin-top: 21px;
+                }
+
+                .toolbar {
+                    //visibility: hidden;
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    width: 363px;
+                    top: -15px;
+                    right: 0;
+                    z-index: 2;
+                    background-color: rgb(11, 26, 58);
+                    padding-left: 35%;
+                    height: 100vh;
+                    margin-right:-100%;
+                    transition: all 0.5s ease;
+
+                    button{
+                        margin-top: 75px;
+                        margin-left: 5em;
+                    }
+                }
+                .mobile-menu{
+                    margin-right:0;
+                }
+                .BoutonH{
+                    visibility: visible;
+                }
+            }
+            @media screen and (max-width: 970px) {
+                .toolbar {
+                    display: none;
+                    background-color: rgba(11, 26, 58, 0.384);
+                    width: 100vw;
+                    margin-right: 0;
+                    backdrop-filter: blur(8px);
+
+                    button {
+                        margin-left: 45%;
+                    }
+                }
+                .mobile-menu{
+                   display: flex;
+                   height: 937px;
+                }
+            }
+        }
+        @media screen and (max-width: 716px) {
+            .title{
+                font: 2em "Alien Invader", sans-serif;
+                margin-top: 43px;
+            }
+
+            .contentTool .BoutonH{
+                height: 33px;
+                width: 33px;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .content{
+        width: 100%;
+        margin-top: 50px;
+        height: 90vh;
+
+        .first-page{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .left{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                padding-right: 50px;
+                padding-left: 50px;
+
+                h1{
+                    font-size: 50px;
+                    color: white;
+                    justify-content: center;
+                }
+            }
+            
+            .right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                padding-right: 50px;
+                padding-left: 50px;
+                
+                .image{
+                    width: 75%;
+                    height: auto;
+                    border-radius: 152px;
+                }
+                @media screen and (max-width: 1530px) {
+                    .image{
+                        width: 80%;
+                        height: auto;
+                        border-radius: 100px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 970px) {
+            .first-page{
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                //justify-content: space-between;
+
+                .left{
+                    width: 80%;
+                    
+                    h1{
+                        font-size: 30px;
+                    }
+                }
+
+                .right{
+                    margin-top: 69px;
+                    width: 80%;
+                }
+
+            }
+        }
+
+        .imgTransi{
+            width: 100%;
+            height: auto;
+        }
+
+        .second-page{
+            width: 100%;
+            height: fit-content;
+            background-color: rgb(233, 233, 233);
+            margin-top: -4px;
+
+            .Aymeric{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: fit-content;
+                padding-top: 100px;
+
+                .image{
+                    width:50%;
+                    
+                    .imageAymeric{
+                        width: 35%;
+                        border-radius: 50%;
+                        margin-left: 39%;
+                        height: auto;
+                        margin-top: 5px;
+                    }
+                    .imageAymeric:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                .texte{
+                    display: flex;
+                    width: 50%;
+                    align-items: center;
+                    padding-right: 54px;
+                    font-size: 0.75em;
+                }
+            }
+
+            .Jeremy{
+                display: flex;
+                flex-direction: row-reverse;
+                width: 100%;
+                height: fit-content;
+
+                .image{
+                    width:50%;
+                    
+                    .imageJeremy{
+                        width: 35%;
+                        border-radius: 50%;
+                        height: auto;
+                        margin-left: 32%;
+                    }
+                    .imageJeremy:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                .texte{
+                    display: flex;
+                    width: 50%;
+                    align-items: center;
+                    padding-left: 54px;
+                    font-size: 0.75em;
+                }
+            }
+
+            .Sophie{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: fit-content;
+
+                .image{
+                    width:50%;
+                    
+                    .imageSophie{
+                        width: 35%;
+                        border-radius: 50%;
+                        margin-left: 39%;
+                        height: auto;
+                        margin-top: 5px;
+                    }
+                    .imageSophie:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                .texte{
+                    display: flex;
+                    width: 50%;
+                    align-items: center;
+                    padding-right: 54px;
+                    font-size: 0.75em;
+                }
+            }
+
+            .Mael {
+                display: flex;
+                flex-direction: row-reverse;
+                width: 100%;
+                height: fit-content;
+                margin-bottom: 10px;
+
+                .image{
+                    width:50%;
+                    
+                    .imageMael{
+                        width: 35%;
+                        border-radius: 50%;
+                        height: auto;
+                        margin-left: 32%;
+                    }
+                    .imageMael:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                .texte{
+                    display: flex;
+                    width: 50%;
+                    align-items: center;
+                    padding-left: 54px;
+                    font-size: 0.75em;
+                }
+            }
+
+            @media screen and (max-width: 970px) {
+                .Aymeric, .Jeremy, .Sophie, .Mael{
+                    margin-bottom: 10px;
+                    .image{
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        width: 200px;
+                        *[class^="image"]{
+                            width: 200px;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+                    }
+                    .texte {
+                        width: 70%;
+                        font-size: 0.5em;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        .imgTransi2{
+            width: 100%;
+            height: auto;
+            margin-top: -10px;
+        }
+
+        .third-page{
+            width: 100%;
+            height: fit-content;
+            background-color: rgb(11, 26, 58);
+        }
+    }
+}
